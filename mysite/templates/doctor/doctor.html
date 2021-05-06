@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block container %}
+ <h1>Доктора!</h1>
+        <div class = "row mb-4 mt-4">
+        {% for doctor in doctors  %}
+            <div class = "col-3">
+                <div class = "card">
+                    <div class = "card-header">
+                    Доктор
+                    </div>
+                    <div class = "card-body">
+                        <h2 class = "card-title">
+                        {{doctor.name}}
+                        </h2>
+                    </div>
+                </div> 
+            </div>  
+        {% empty %}
+            <div class ="alert alert-success">
+            This is page is empty
+            </div>
+        {% endfor %}
+        </div> 
+    </div>
+   
+{% endblock container %}
